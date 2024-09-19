@@ -104,5 +104,5 @@ def start_stop_recording():
 stop_recording = True
 
 # Start the process
-#start_stop_recording()
-transcribe_audio('continuous_recording.wav')
+start_stop_recording()
+#transcribe_audio('continuous_recording.wav')
