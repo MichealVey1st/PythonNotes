@@ -3,10 +3,23 @@ import wave
 import threading
 import keyboard  
 import whisper
-
-# Function to handle recording
 import pyaudio
 import wave
+
+def main():
+    # Print entrance
+    print("Welcome to the audio recording & transcripting software!\n")
+
+    # Ask for name of file from user
+    filename = input("Please enter a filename (DO NOT ADD FILETYPE):\n")
+    # create the .wav file
+    filename = "./notes/" + filename + ".wav"
+
+    # Global flag to control recording
+    stop_recording = True
+    # Start the process
+    start_stop_recording(filename)
+    
 
 def record_audio(filename):
     # Set up audio parameters
@@ -45,10 +58,10 @@ def record_audio(filename):
         wf.setsampwidth(p.get_sample_size(format))
         wf.setframerate(rate)
         wf.writeframes(b''.join(frames))
-    
-    print(f"Audio saved to {filename}")
 
+    print(f"Audio saved to {filename}")
     transcribe_audio(filename)
+    
 
 
 
@@ -73,17 +86,17 @@ def transcribe_audio(filename):
         raise ValueError("Transcription text is not a string")
 
     # Save transcription to a file
-    transcript_filename = filename.replace(".wav", "_transcript.txt")
+    transcript_filename = filename.replace(".wav", ".txt")
     with open(transcript_filename, 'w') as f:
         f.write(transcription_text)
     
     print(f"Transcription saved to {transcript_filename}")
 
 # Start and stop recording on key press
-def start_stop_recording():
+def start_stop_recording(file):
     global stop_recording
-    audio_filename = "continuous_recording.wav"
-    print("ready to record....")
+    audio_filename = file
+    print("ready to record.... press ESC to start")
     
     while True:
         # Wait for ESC to start recording
@@ -100,9 +113,5 @@ def start_stop_recording():
         stop_recording = True
         record_thread.join()  # Wait for the recording to finish
 
-# Global flag to control recording
-stop_recording = True
-
-# Start the process
-start_stop_recording()
-#transcribe_audio('continuous_recording.wav')
+# call main
+main()
