@@ -8,10 +8,15 @@ import wave
 
 def main():
     # Print entrance
-    print("Welcome to the audio recording & transcripting software!\n")
+    print("\n\n\n\n\n********************************************\n\nWelcome to the audio recording & transcripting software!\n\n********************************************\n\n\n")
 
-    # Ask for name of file from user
-    filename = input("Please enter a filename (DO NOT ADD FILETYPE):\n")
+    # Ask for name of file from user 
+    filename = input("Please enter a filename or type \"exit\" to exit the program (DO NOT ADD THE FILETYPE IT WILL DO SO AUTOMATICALLY):\n")
+
+    # exit if the user types exit
+    if (filename.lower() == "exit"):
+        exit()
+
     # create the .wav file
     filename = "./notes/" + filename + ".wav"
 
@@ -96,7 +101,7 @@ def transcribe_audio(filename):
 def start_stop_recording(file):
     global stop_recording
     audio_filename = file
-    print("ready to record.... press ESC to start")
+    print("\nready to record.... press ESC to start")
     
     while True:
         # Wait for ESC to start recording
@@ -112,6 +117,7 @@ def start_stop_recording(file):
         keyboard.wait('esc')
         stop_recording = True
         record_thread.join()  # Wait for the recording to finish
+        main() # Boot back to menu when done
 
 # call main
 main()
