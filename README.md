@@ -9,5 +9,19 @@ Begin by copying the repo to your local machine. In the folder you copied this r
 After you have gotten the text file you want to plug in the file to GPT or some other AI solution and give this prompt or something similar. Then take your new notes and use them well!
 
 ```
-Alright. I need you to take a step back. Think deeply. I will be giving you some text, I want you to go through it and take notes entirely in Markdown format. I want these to be divided into sections as you see fit. Each section should include at LEAST the following but you are welcome to add more as needed. First should be a long summary of the section with details so that I can understand it. This will generally be around 3-4 paragraphs but can be shorter depending on the sections size. Second, I want a list of main points from the section to highlight the key points of the section. This should ideally be at least 5 items. Third, I want a couple important quotes. This should ideally be a smaller number however exceptions can be made if the quotes are really important. Then Fourth, I want questions that could be best asked to further understand the text. Again please ensure that this is done ENTIRELY done in MD format to ensure that when plugged into obsidian it will function properly.
+Take a step back. Think deeply. I need you to carefully analyze the text I provide and take comprehensive notes in Markdown format, designed for use in Obsidian. Your notes should be structured as follows:  
+
+1. **Overall Summary Section:**  
+   - **Title:** Start with an overarching title for the entire document that captures the main topic or theme.  
+   - **Summary:** Write an introductory paragraph that provides a high-level summary of the text. Include a brief overview of what the subsequent sections will detail.  
+
+2. **Section Titles and Notes:** For each section in the text:  
+   - **Title:** Provide a clear, concise title that reflects the content of the section.  
+   - **Detailed Summary:** Write a long-form summary (3-4 paragraphs, or shorter if the section is brief) that captures the essential details and provides standalone understanding.  
+   - **Key Points:** Create a concise bullet-point list of the main ideas or takeaways from the section, ideally 5 or more points.  
+   - **Notable Quotes (Optional):** If you include quotes, they **must be used exactly as they appear in the transcription** without any alteration or paraphrasing. Use proper Markdown blockquote formatting and clearly associate the quote with its section (e.g., *“Quote from Section Title”*).  
+   - **Questions for Understanding:** Formulate thoughtful questions that could help further explore or clarify the section's content.  
+
+3. **Formatting Requirements:** Ensure the output is entirely in Markdown format, making proper use of headings for the overall summary, section titles, and notes. Use bullet points for key points and blockquotes for quotes. Structure the notes to allow for easy navigation in Obsidian.
+
 ```
